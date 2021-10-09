@@ -2,7 +2,7 @@
 
 # Made with ❤ by @SpeedIndeed - Telegram
 
-printf "This is an interactive script that will help you in deploying Slam- Mirrorbot. What do you want to do?
+printf "This is an interactive script that will help you in deploying almost any mirrorbot. What do you want to do?
 1) Deploying first time
 2) Redeploying but already have credentials.json, token.pickle and SA folder (optional)
 3) Just commiting changes to existing repo \n"
@@ -11,7 +11,7 @@ while true; do
     case $choice in
             "1")
 				echo -e "Firstly we will make credentials.json"
-				echo -e "For that, follow the TUTORIAL 2 given in this post: https://telegra.ph/Deploying-your-own-Slam-Mirrorbot-08-18#TUTORIAL-2"
+				echo -e "For that, follow the TUTORIAL 2 given in this post: https://telegra.ph/Deploying-your-own-Mirrorbot-10-09#TUTORIAL-2"
 				echo -e "If this script closes in between then just re-run it. \n"
 				for (( ; ; ))
 				do
@@ -103,7 +103,7 @@ while true; do
 								cd accounts
 								grep -oPh '"client_email": "\K[^"]+' *.json > emails.txt
 								cd -
-								echo -e "For that, follow TUTORIAL 2 given in this post: https://telegra.ph/Deploying-your-own-Slam-Mirrorbot-08-18#TUTORIAL-2 \n"
+								echo -e "For that, follow TUTORIAL 3 given in this post: https://telegra.ph/Deploying-your-own-Mirrorbot-10-09#TUTORIAL-3 \n"
 								for (( ; ; ))
 								do
 									read -p "After completing Tutorial, Press y : " tut

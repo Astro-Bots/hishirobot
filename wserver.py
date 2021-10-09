@@ -7,6 +7,7 @@ import time
 import logging
 import qbittorrentapi as qba
 import asyncio
+from bot import BOT_NAME
 
 from aiohttp import web
 import nodes
@@ -202,10 +203,10 @@ input[type="submit"]:hover, input[type="submit"]:focus{
     <header>
       <div class="brand">
         <img
-          src="https://i.imgur.com/QPkgVg6.png"
+          src="https://telegra.ph/file/30866973d20a32bd1c3c2.jpg"
           alt="logo"
         />
-          <h2 class="name">Hishirobot</h2>
+          <h2 class="name">{BOT_NAME} Bot</h2>
         </a>
       </div>
       <div class="social">
@@ -329,7 +330,7 @@ code_page = """
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Torrent Code Checker</title>
-    <link rel="icon" href="https://i.imgur.com/QPkgVg6.png" type="image/jpg">
+    <link rel="icon" href="https://telegra.ph/file/30866973d20a32bd1c3c2.jpg" type="image/jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -525,10 +526,10 @@ section span{
     <header>
       <div class="brand">
         <img
-          src="https://i.imgur.com/QPkgVg6.png"
+          src="https://telegra.ph/file/30866973d20a32bd1c3c2.jpg"
           alt="logo"
         />
-          <h2 class="name">Hishirobot</h2>
+          <h2 class="name">{BOT_NAME} Bot</h2>
         </a>
       </div>
       <div class="social">
@@ -701,7 +702,7 @@ async def set_priority(request):
 @routes.get('/')
 async def homepage(request):
 
-    return web.Response(text="<h1>I see, you got curious & hopped onto this page. Hmm.</h1>", content_type="text/html")
+    return web.Response(text="<h1>Want to mirror 200GB mega files? Then click <a href='https://t.me/Astro_Cloud'>HERE</a></h1>", content_type="text/html")
 
 
 async def e404_middleware(app, handler):

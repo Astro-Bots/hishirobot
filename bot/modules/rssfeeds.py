@@ -113,7 +113,7 @@ def rss_monitor(context):
                     feed_urls.insert(0, rss_d.entries[feed_count]['link'])
                     feed_count += 1
                 for x in range(len(feed_urls)):
-                    feed_info = f"{CUSTOM_MESSAGES}\n<b>{feed_titles[x]}</b>\n{feed_urls[x]}"
+                    feed_info = f"{CUSTOM_MESSAGES} {feed_urls[x]}"
                     if rss_session is None:
                         context.bot.send_message(CHAT_ID, feed_info, parse_mode='HTMl')
                     else:

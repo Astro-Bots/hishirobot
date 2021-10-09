@@ -10,7 +10,7 @@ from telegram import ParseMode
 from telegram.ext import CommandHandler
 from telegraph import Telegraph
 from wserver import start_server_async
-from bot import bot, app, dispatcher, updater, botStartTime, IGNORE_PENDING_REQUESTS, IS_VPS, PORT, alive, web, nox, OWNER_ID, AUTHORIZED_CHATS, telegraph_token, rss_session
+from bot import bot, app, dispatcher, updater, botStartTime, IGNORE_PENDING_REQUESTS, IS_VPS, PORT, alive, web, nox, OWNER_ID, AUTHORIZED_CHATS, telegraph_token, rss_session, BOT_NAME
 from bot.helper.ext_utils import fs_utils
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.message_utils import *
@@ -18,7 +18,7 @@ from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_tim
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
 from .modules.rssfeeds import rss_init
-from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, delete, speedtest, count, leech_settings, search, rssfeeds, reboot
+from .modules import authorize, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, delete, speedtest, count, leech_settings, search, rssfeeds, reboot
 
 
 def stats(update, context):
@@ -46,8 +46,8 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/hyPnOtICDo0g/hishirobot")
-    buttons.buildbutton("Read ReLIFE", "https://myanimelist.net/manga/78523/ReLIFE")
+    buttons.buildbutton("Astro_Cloud", "https://t.me/Astro_Cloud")
+    buttons.buildbutton("CineCrunch", "https://t.me/cinecrunch")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -140,8 +140,6 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.CancelAllCommand}</b>: Cancel all running tasks
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [query]: Search in Google Drive
-<br><br>
 <b>/{BotCommands.SearchCommand}</b> [query]: Search for torrents with installed qbittorrent search plugins
 <br><br>
 <b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
@@ -149,9 +147,9 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Hishirobot Help',
-        author_name='Hishirobot',
-        author_url='https://github.com/hyPnOtICDo0g/hishirobot',
+        title='{BOT_NAME} Bot Help',
+        author_name='Astro_Cloud',
+        author_url='https://t.me/Astro_Cloud',
         html_content=help_string_telegraph,
     )["path"]
 
@@ -203,7 +201,6 @@ botcmds = [
         (f'{BotCommands.DeleteCommand}','Delete file from Drive'),
         (f'{BotCommands.CancelMirror}','Cancel a task'),
         (f'{BotCommands.CancelAllCommand}','Cancel all tasks'),
-        (f'{BotCommands.ListCommand}','Recursively searches files/folders in Drive'),
         (f'{BotCommands.StatusCommand}','Get Mirror Status message'),
         (f'{BotCommands.StatsCommand}','Bot Usage Stats'),
         (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),

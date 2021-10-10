@@ -147,6 +147,7 @@ def get_readable_message():
                 except:
                     pass
                 msg += f"\n<b>To Cancel:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f'\n<b>Adder:</b> {download.message.from_user.first_name} (<code>{download.message.from_user.id}</code>)'
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break

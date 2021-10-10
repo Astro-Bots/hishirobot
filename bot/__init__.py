@@ -224,12 +224,6 @@ if os.path.exists('drive_folder'):
                 SEARCH_INDEXES.append(temp[2])
             except IndexError as e:
                 SEARCH_INDEXES.append(None)
-if DRIVE_ID :
-    pass
-else :
-    LOGGER.error("The README.md file there to be read! Exiting now!")
-    exit(1)
-
 try:
     TG_SPLIT_SIZE = getConfig('TG_SPLIT_SIZE')
     if len(TG_SPLIT_SIZE) == 0 or int(TG_SPLIT_SIZE) > 2097152000:

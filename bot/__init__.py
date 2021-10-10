@@ -485,6 +485,14 @@ if os.path.exists('drive_folder'):
                 INDEX_URLS.append(temp[2])
             except IndexError as e:
                 INDEX_URLS.append(None)
+try:
+    BOT_NAME = getConfig('BOT_NAME')
+    SUFFIX = getConfig('SUFFIX')
+    if len(BOT_NAME) == 0 or len(SUFFIX) == 0:
+        raise KeyError
+except KeyError:
+    BOT_NAME = None
+    SUFFIX = None
 
 SEARCH_PLUGINS = os.environ.get('SEARCH_PLUGINS', None)
 if SEARCH_PLUGINS is not None:

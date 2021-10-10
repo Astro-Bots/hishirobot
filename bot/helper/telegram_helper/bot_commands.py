@@ -5,10 +5,10 @@ suffix = os.getenv("SUFFIX", "")
 class _BotCommands:
     def __init__(self):
         self.StartCommand = 'start'+suffix
-        self.mirCommand = 'mir'+suffix
-        self.UnzipmirCommand = 'unzipmir'+suffix
-        self.ZipmirCommand = 'zipmir'+suffix
-        self.Cancelmir = 'cancel'+suffix
+        self.MirrorCommand = 'mir'+suffix
+        self.UnzipMirrorCommand = 'unzipmir'+suffix
+        self.ZipMirrorCommand = 'zipmir'+suffix
+        self.CancelMirror = 'cancel'+suffix
         self.CancelAllCommand = 'cancelall'+suffix
         self.SearchCommand = 'search'+suffix
         self.StatusCommand = 'status'+suffix
@@ -29,9 +29,9 @@ class _BotCommands:
         self.RebootCommand = 'reboot'+suffix
         self.ShutDownCommand = 'shutdown'+suffix
         self.ZipWatchCommand = 'zipwatch'+suffix
-        self.QbmirCommand = 'qbmir'+suffix
-        self.QbUnzipmirCommand = 'qbunzipmir'+suffix
-        self.QbZipmirCommand = 'qbzipmir'+suffix
+        self.QbMirrorCommand = 'qbmir'+suffix
+        self.QbUnzipMirrorCommand = 'qbunzipmir'+suffix
+        self.QbZipMirrorCommand = 'qbzipmir'+suffix
         self.DeleteCommand = 'del'+suffix
         self.ShellCommand = 'sh'+suffix
         self.ExecHelpCommand = 'exechelp'+suffix

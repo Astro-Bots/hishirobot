@@ -34,12 +34,12 @@ def stats(update, context):
     disk = psutil.disk_usage('/').percent
     stats = f'<b>Bot Uptime:</b> <code>{currentTime}</code>\n' \
             f'<b>Total Disk Space:</b> <code>{total}</code>\n' \
-            f'<b>Used:</b> <code>{used}</code> ' \
+            f'<b>Used:</b> <code>{used}</code>' \
             f'<b>Free:</b> <code>{free}</code>\n\n' \
             f'<b>Upload:</b> <code>{sent}</code>\n' \
             f'<b>Download:</b> <code>{recv}</code>\n\n' \
-            f'<b>CPU:</b> <code>{cpuUsage}%</code> ' \
-            f'<b>RAM:</b> <code>{memory}%</code> ' \
+            f'<b>CPU:</b> <code>{cpuUsage}%</code>' \
+            f'<b>RAM:</b> <code>{memory}%</code>' \
             f'<b>DISK:</b> <code>{disk}%</code>'
     sendMessage(stats, context.bot, update)
 
@@ -56,13 +56,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
-        sendMarkup(
-            'Oops! not an Authorized user.',
-            context.bot,
-            update,
-            reply_markup,
-        )
-
+        sendMarkup('Oops! not an Authorized user.', context.bot, update, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update)
